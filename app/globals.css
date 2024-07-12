@@ -2,32 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #00869A;
+}
+
+.Typewriter__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: end; */
+}
+
+.Typewriter__wrapper::after {
+  content: "|";
+  display: flex;
+  align-items: end;
+  animation: Typewriter-cursor 1s infinite;
+  margin-left: 1px;
+  font-weight: bold;
+  color: #671957;
+  font-size: 18px;
+
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .skewed-left {
+    clip-path: polygon(0 0, 100% 33%, 100% 100%, 0% 100%);
+  }
+
+  .skewed-right {
+    clip-path: polygon(0 33%, 100% 0, 100% 100%, 0% 100%);
   }
 }
