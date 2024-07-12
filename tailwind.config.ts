@@ -19,7 +19,9 @@ const config: Config = {
         'evergreen': '#026246',
         'offwhite': '#EFECE7',
         'lemon_yellow': '#FFF3A7',
-        'royal_purple': '#671957'
+        'royal_purple': '#671957',
+        'maroon_purple': '#621F40',
+        'intense_blue': '#003e89'
       },
     },
   },

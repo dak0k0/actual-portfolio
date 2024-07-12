@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 body {
-  background-color: #00869A;
+  background-color: #621F40;
+}
+
+.Typewriter {
+  display: flex;
+  align-items: center;
 }
 
 .Typewriter__wrapper {
@@ -20,7 +25,7 @@ body {
   animation: Typewriter-cursor 1s infinite;
   margin-left: 1px;
   font-weight: bold;
-  color: #671957;
+  color: #FFF3A7;
   font-size: 18px;
 
 }
