@@ -15,13 +15,12 @@ const config: Config = {
       },
 
       colors: {
-        'deep_cyan': '#00869A',
-        'evergreen': '#026246',
-        'offwhite': '#EFECE7',
-        'lemon_yellow': '#FFF3A7',
-        'royal_purple': '#671957',
-        'maroon_purple': '#621F40',
-        'intense_blue': '#003e89'
+        'palette-blue': '#002fff',
+        'palette-beige': '#f5f5dc',
+        'palette-green': '#00ff40',
+        'palette-pink': '#ff9bb9',
+        'palette-red': '#ff0700',
+        'palette-purple': '#8f00ff',
       },
     },
   },

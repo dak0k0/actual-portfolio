@@ -11,7 +11,7 @@ const Header = () => {
     const matches = useMediaQuery('(max-width: 768px)')
 
     return (
-        <div className="fixed z-50 mt-[50px] text-offwhite">
+        <div className="fixed z-50 mt-[50px] text-palette-beige mix-blend-exclusion">
             <div className="fixed ml-[74px]">
                 <h1 className="text-2xl tracking-wide">the dak0k0 chronicles</h1>
             </div>
