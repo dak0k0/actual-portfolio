@@ -8,7 +8,7 @@ const dm_serif_display = DM_Serif_Display({weight: "400", subsets: ["latin"]})
 
 const DesktopContent = () => {
     return (
-        <div className="relative h-[calc(278.33vh+3*100vw*tan(6deg))] max-w-[100%] w-screen">
+        <div className="hidden md:block relative h-[calc(278.33vh+3*100vw*tan(6deg))] max-w-[100%] w-screen">
             <div className="relative h-[calc(100vh+43.33vh)]">
                 <div className="flex flex-col items-center justify-center h-[calc(83.34vh-2*tan(6deg)*25vw)] text-palette-beige skew-y-[-3deg]">
                     <Typewriter 
