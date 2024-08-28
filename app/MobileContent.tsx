@@ -4,23 +4,9 @@ import React, { ReactNode, useEffect, useRef, useState} from 'react'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
-
 import { SIDENAV_ITEMS } from '@/ui-elements/styles/constants';
-import { SideNavItem } from '@/ui-elements/styles/types';
-import { Icon } from "@iconify/react";
 import { motion, useCycle } from "framer-motion";
 import MobilePage from "./MobilePage"
-import { useWindowSize } from "rooks";
-
-function useWidth() {
-    const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
-    return innerWidth
-}
-
-function useHeight() {
-    const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
-    return innerHeight
-}
 
 const sidebar = {
     open: {
