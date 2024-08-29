@@ -10,7 +10,7 @@ import MobilePage from "./MobilePage"
 
 const sidebar = {
     open: {
-        clipPath: `polygon(0 0, 0 100%, 100% 100%, 100% 0)`,
+        clipPath: `polygon(0 0, 0 100vh, 100% 100vh, 100% 0)`,
         delay: 0.2,
         transition: {
             type: "spring",
@@ -41,9 +41,16 @@ const MobileContent = () => {
     const { height } = useDimensions(containerRef);
     const [isOpen, toggleOpen] = useCycle(false, true);
 
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else document.body.style.overflow = 'scroll';
+        return () => {};
+    }, [isOpen]);
+
 
     return (
-        <div>
+        <div className={`h-[100vh] md:hidden w-full`}>
             <motion.nav 
                 initial={false}
                 animate={isOpen ? "open" : "closed"}
@@ -55,12 +62,12 @@ const MobileContent = () => {
             >
                 <div className="fixed z-1 bg-palette-blue h-[6.25vh] w-screen top-0"></div>
                 <motion.div
-                    className="fixed inset-0 right-0 w-full bg-black"
+                    className="fixed inset-0 right-0 w-full h-full bg-black"
                     variants={sidebar}
                 />
 
                 <motion.ul
-                    className="absolute grid w-full gap-3 px-10 pt-[37.5vh]"
+                    className="fixed grid w-full gap-3 px-10 pt-[37.5vh]"
                     variants={variants}
                 >
 
@@ -85,15 +92,14 @@ const MobileContent = () => {
                     })}
 
                 </motion.ul>
-                <div className="h-[14vh] w-[calc(100vw-86px)] relative top-0 z-[-1]">
+                <div className="h-[14vh] w-[calc(100vw-86px)] absolute top-0 z-[-1]">
                     <Link href="/" className="text-palette-beige text-2xl tracking-widest absolute left-[9vw] top-[calc(10vh)]">
                         <p className="leading-6">the dak0k0<br/>chronicles</p>
                     </Link>
                 </div>
                 <MenuToggle toggle={toggleOpen}/>
             </motion.nav>
-            
-            <MobilePage isOpen={isOpen}/>
+            <MobilePage/>
         </div>
     )
 }
@@ -108,7 +114,7 @@ const MenuToggle = ({ toggle }: { toggle: any}) => (
         <svg width="46" height="46" viewBox="0 0 46 46">
             <Path
                 variants={{
-                    closed: { d: "M 8 9.154 L 38 9.154", stroke:"white"},
+                    closed: { d: "M 8 9.154 L 38 9.154", stroke:"#ffffff"},
                     open: { d: "M 11 35 L 35 11", stroke:"#f5f5dc"},
                 }}
                 strokeWidth="3"                
@@ -116,7 +122,7 @@ const MenuToggle = ({ toggle }: { toggle: any}) => (
             <Path
                 d="M 8 23 L 38 23"
                 variants={{
-                    closed: { opacity: 1, stroke:"white"},
+                    closed: { opacity: 1, stroke:"#ffffff"},
                     open: { opacity: 0 }
                 }}
                 transition={{duration: 0.1}}
@@ -124,7 +130,7 @@ const MenuToggle = ({ toggle }: { toggle: any}) => (
             />
             <Path
                 variants={{
-                    closed: { d: "M 8 36.846 L 38 36.846", stroke:"white"},
+                    closed: { d: "M 8 36.846 L 38 36.846", stroke:"#ffffff"},
                     open: { d: "M 11 11 L 35 35", stroke:"#f5f5dc"}
                 }}
                 strokeWidth="3"
